@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Static Content | Test for CusJo</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script>
+            var app = angular.module('cusjoTest', []);
+            app.controller('testControl', function($scope) {
+                $scope.language = ["English","Chinese","Hindi"]
+                $scope.changeLanguage = function(item){
+                    alert(item)
+                }
+            });
+        </script>
+        <style>
+            body{
+                font-size: 14px;
+                padding: 25px;
+            }
+            h1{
+                font-size: 2rem;
+                color: red;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+        </style>
+    </head>
+    <body>     
+
+        <div ng-app="cusjoTest" ng-controller="testControl">
+            <div style="maring-bottom:15px;">
+                <p><i style="margin-right: 10px;border-radius: 50%;width:20px;height: 20px;border:1px solid #000;display: inline-block;text-align: center;"><b>i</b></i>Please Select Language:</p>
+                <select ng-model="selectLanguage" ng-change="changeLanguage(selectLanguage)" ng-options="x for x in language">
+                    <option value="">Please Select</option>
+                </select>
+            </div>
+
+            <h1>Cusjo Test Application</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <b>Excepteur</b> sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <i>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</i></p>
+        </div>
+    </body>
+</html>
